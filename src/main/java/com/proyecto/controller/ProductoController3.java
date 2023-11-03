@@ -16,8 +16,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @Slf4j
-@RequestMapping("/producto")
-public class ProductoController {
+@RequestMapping("/producto3")
+public class ProductoController3 {
 
     @Autowired
     private ProductoService productoService;
@@ -32,17 +32,17 @@ public class ProductoController {
     @GetMapping("/listado")
     public String inicio(Model model) {
         var productos = productoService.getProductos(false);
-        var productosCategoria1 = productos.stream()
-                .filter(producto -> producto.getIdCategoria() == 1)// Filtra los productos de la categoría 1
+        var productosCategoria3 = productos.stream()
+                .filter(producto -> producto.getIdCategoria() == 3)// Filtra los productos de la categoría 1
                 .collect(Collectors.toList());
-        model.addAttribute("productos", productosCategoria1);
-        model.addAttribute("totalProductos", productosCategoria1.size());
-        return "/producto/listado";
+        model.addAttribute("productos", productosCategoria3);
+        model.addAttribute("totalProductos", productosCategoria3.size());
+        return "/producto3/listado";
     }
 
     @GetMapping("/nuevo")
     public String productoNuevo(Producto producto) {
-        return "/producto/modifica";
+        return "/producto3/modifica";
     }
 
     @Autowired
@@ -60,19 +60,19 @@ public class ProductoController {
                             producto.getIdProducto()));
         }
         productoService.save(producto);
-        return "redirect:/producto/listado";
+        return "redirect:/producto2/listado";
     }
 
     @GetMapping("/eliminar/{idProducto}")//las llaves significa que en la pantalla sale cual va a eliminar
     public String productoEliminar(Producto producto) {
         productoService.delete(producto);
-        return "redirect:/producto/listado";//es como para volver a cargar la pagina para ver los cambios
+        return "redirect:/producto2/listado";//es como para volver a cargar la pagina para ver los cambios
     }
 
     @GetMapping("/modificar/{idProducto}")
     public String productoModificar(Producto producto, Model model) {
         producto = productoService.getProducto(producto);
         model.addAttribute("producto", producto);
-        return "/producto/modifica";
+        return "/producto2/modifica";
     }
 }
