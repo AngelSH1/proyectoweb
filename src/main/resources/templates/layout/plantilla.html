@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head">
+        <title>Tienda en Linea</title>
+        <meta charset="UTF-8"/>
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+        <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+
+        <style>
+            body {
+                margin: 0; /* Elimina el margen predeterminado del cuerpo */
+            }
+            .custom-background {
+                background-color: #669933;
+                padding: 10px; /* Espacio de relleno para separar el contenido del borde */
+            }
+            .custom-background3 {
+                background-color: #64B226;
+                padding: 10px;
+                border-color: #64B226;
+                border-radius: 50px;
+            }
+            .custom-text {
+                color: #64B226;
+            }
+            .custom-background2 {
+                background-color: #FFFFFF;
+                padding: 5px; /* Espacio de relleno para separar el contenido del borde */
+            }
+        </style>
+    </head>
+    <body>
+        <header th:fragment="header" class="header">
+            <div class="custom-background">
+                <div class="container mt-3">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <div class="input-group">
+                            <input type="text" class="form-control rounded-pill" placeholder="Buscar Productos"></input>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-emphasis-color dropdown-toggle" type="button" data-toggle="dropdown">
+                                    Categorias
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Estetica</a>
+                                    <a class="dropdown-item" href="#">Maquillaje</a>
+                                    <a class="dropdown-item" href="#">Peluqueria</a>
+                                    <a class="dropdown-item" href="#">Uñas</a>
+                                </div>
+                            </div>
+                            <div class="input-group-append">
+                                <a class="btn btn-outline-emphasis-color" href="#">Iniciar sesión</a>
+                                <a class="btn btn-outline-emphasis-color" href="#">
+                                    <i class="fa fa-shopping-cart"></i> Carrito
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="navbar navbar-expand-lg w-100 navbar-dark bg-dark">
+                <div class="container">
+                    <div class="custom-background2">
+                        <ul class="navbar-nav ml-4">
+                            <li class="nav-item dropdown col-8">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-bars" aria-hidden="true"></i> Ver Categorias
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item text-dark" href="#">Estetica</a>
+                                    <a class="dropdown-item text-dark" href="#">Maquillaje</a>
+                                    <a class="dropdown-item text-dark" href="#">Peluqueria</a>
+                                    <a class="dropdown-item text-dark" href="#">Uñas</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <a class="navbar-brand" th:href="@{/producto/listado}">Inicio</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" th:href="@{/}">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contactanos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Nosotros</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
+        <footer th:fragment="footer" class="bg-light text-dark">
+            <hr class="my-1 border-success"></hr>
+            <div class="d-flex justify-content-center align-items-center">
+                <p class="mb-2 mr-2 mx-2">Sitio propiedad de S.A. 2023 Todos los derechos reservados.</p>
+
+                <a rel="noopener noreferrer nofollow" href="#" target="_blank" class="wd-social-icon social-facebook" aria-label="Facebook social link">
+                    <i class="fab fa-facebook fa-2x "></i>
+                </a>
+
+                <a rel="noopener noreferrer nofollow" href="#" target="_blank" class="wd-social-icon social-instagram" aria-label="Instagram social link">
+                    <i class="fab fa-instagram fa-2x mx-2"></i>
+                </a>
+
+                <a href="#" class="text-info">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+            </div>
+        </footer>
+
+
+
+    </body>
+</html>
