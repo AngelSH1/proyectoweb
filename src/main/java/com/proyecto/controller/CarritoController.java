@@ -27,7 +27,7 @@ public class CarritoController {
      public String inicio(Model model) {
         var productos = productoService.getProductos(false);
         var productosCategoria1 = productos.stream()
-                .filter(producto -> producto.getIdCategoria() == 1)// Filtra los productos de la categoría 1
+                
                 .collect(Collectors.toList());
         model.addAttribute("productos", productosCategoria1);
         model.addAttribute("totalProductos", productosCategoria1.size());
