@@ -6,29 +6,36 @@ CREATE SCHEMA proyectoweb ;
 create user 'usuario_proyecto'@'%' identified by 'cliente_1';
 grant all privileges on proyectoweb.* to 'usuario_proyecto'@'%';
 flush privileges;
-create table proyectoweb.categoria (
-  id_categoria INT NOT NULL AUTO_INCREMENT,
-  descripcion VARCHAR(30) NOT NULL,
-  ruta_imagen varchar(1024),
-  activo bool,
-  PRIMARY KEY (id_categoria))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
+CREATE TABLE proyectoweb.categoria (
+    id_categoria INT NOT NULL AUTO_INCREMENT,
+    descripcion VARCHAR(30) NOT NULL,
+    ruta_imagen VARCHAR(1024),
+    activo BOOL,
+    PRIMARY KEY (id_categoria)
+)  ENGINE=INNODB DEFAULT CHARACTER SET=UTF8MB4;
 
-create table proyectoweb.producto (
-  id_producto INT NOT NULL AUTO_INCREMENT,
-  id_categoria INT NOT NULL,
-  descripcion VARCHAR(100) NOT NULL,  
-  detalle VARCHAR(1600) NOT NULL, 
-  precio double,
-  existencias int,  
-  ruta_imagen varchar(1024),
-  activo bool,
-  PRIMARY KEY (id_producto),
-  foreign key fk_producto_caregoria (id_categoria) references categoria(id_categoria)  
-)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
+CREATE TABLE proyectoweb.producto (
+    id_producto INT NOT NULL AUTO_INCREMENT,
+    id_categoria INT NOT NULL,
+    descripcion VARCHAR(100) NOT NULL,
+    detalle VARCHAR(1600) NOT NULL,
+    precio DOUBLE,
+    existencias INT,
+    ruta_imagen VARCHAR(1024),
+    activo BOOL,
+    PRIMARY KEY (id_producto),
+    FOREIGN KEY (id_categoria)
+        REFERENCES categoria (id_categoria)
+)  ENGINE=INNODB DEFAULT CHARACTER SET=UTF8MB4;
+
+CREATE TABLE proyectoweb.carrito (
+    id_item INT NOT NULL AUTO_INCREMENT,
+    id_producto INT NOT NULL,
+    PRIMARY KEY (id_item),
+    FOREIGN KEY (id_producto) REFERENCES producto (id_producto)
+)  ENGINE=INNODB DEFAULT CHARACTER SET=UTF8MB4;
+
+
 
 /*Se insertan 3 categorias de productos como ejemplo */
 INSERT INTO proyectoweb.categoria (id_categoria,descripcion,ruta_imagen,activo) VALUES 
