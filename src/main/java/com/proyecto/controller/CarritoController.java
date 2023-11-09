@@ -22,8 +22,6 @@ public class CarritoController {
 
     @Autowired
     private ProductoService productoService;
-    @Autowired
-        private CarritoService carritoService;
 
     @GetMapping("/listado")
      public String inicio(Model model) {
