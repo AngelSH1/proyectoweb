@@ -1,9 +1,11 @@
-
 package com.proyecto.dao;
+
 import com.proyecto.domain.Producto;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
-////trallendonos la info de la clase producto
-///
-public interface ProductoDao extends JpaRepository <Producto, Long>{
-    
+
+public interface ProductoDao extends JpaRepository<Producto, Long> {
+
+    List<Producto> findByDescripcionContaining(String descripcion);
+
 }

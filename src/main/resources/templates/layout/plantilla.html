@@ -39,13 +39,15 @@
                 <div class="container mt-3">
                     <div class="d-flex align-items-center justify-content-center">
                         <div class="input-group">
-                            <input type="text" class="form-control rounded-pill" placeholder="Buscar Productos"></input>
+                            <form action="/producto/listado" method="get">
+                                <input type="text" name="terminoBusqueda" class="form-control rounded-pill" placeholder="Buscar Productos" />
+                            </form>
                             <div class="input-group-append">
                                 <button class="btn btn-outline-emphasis-color dropdown-toggle" type="button" data-toggle="dropdown">
                                     Categorias
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" th:href="@{/producto/listado}">Estetica</a>
+                                    <a class="dropdown-item" th:href="@{/producto1/listado}">Estetica</a>
                                     <a class="dropdown-item" th:href="@{/producto2/listado}">Maquillaje</a>
                                     <a class="dropdown-item" th:href="@{/producto3/listado}">Peluqueria</a>
                                     <a class="dropdown-item" th:href="@{/producto4/listado}">Uñas</a>
@@ -71,7 +73,7 @@
                                     <i class="fa fa-bars" aria-hidden="true"></i> Ver Categorias
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item text-dark" th:href="@{/producto/listado}">Estetica</a>
+                                    <a class="dropdown-item text-dark" th:href="@{/producto1/listado}">Estetica</a>
                                     <a class="dropdown-item text-dark" th:href="@{/producto2/listado}">Maquillaje</a>
                                     <a class="dropdown-item text-dark" th:href="@{/producto3/listado}">Peluqueria</a>
                                     <a class="dropdown-item text-dark" th:href="@{/producto4/listado}">Uñas</a>
