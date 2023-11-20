@@ -33,7 +33,7 @@ public class ProductoController2 {
     public String inicio(Model model) {
         var productos = productoService.getProductos(false);
         var productosCategoria2 = productos.stream()
-                .filter(producto -> producto.getIdCategoria() == 2)// Filtra los productos de la categoría 1
+                .filter(producto -> producto.getIdCategoria() == 2)// Filtra los productos de la categoría 2
                 .collect(Collectors.toList());
         model.addAttribute("productos", productosCategoria2);
         model.addAttribute("totalProductos", productosCategoria2.size());
