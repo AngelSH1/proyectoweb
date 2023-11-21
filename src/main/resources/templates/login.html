@@ -17,25 +17,28 @@
         <div class="row justify-content-center g-2">
             <div class="col-md-5">
                 <div class="p-3">
-                    <h2 class="text-center">REGISTRARSE</h2>
-                    <form>
+                    <h2 class="text-center">Login</h2>
+                    <form method="POST" th:action="@{/login}">
                         <div class="form-group p-3">
                             <label for="email">Dirección de Correo Electrónico</label>
-                            <input type="email" class="form-control rounded-pill " id="email" placeholder="Ingrese su correo electrónico"name="email"></input>
+                            <input class="form-control rounded-pill " type="text" name="username" id="username"placeholder="Ingrese su correo electrónico"/>
                         </div>
                         <div class="form-group p-3">
                             <label for="pwd">Contraseña</label>
-                            <input type="password" class="form-control rounded-pill" id="pwd" placeholder="Ingrese su contraseña" name="pswd">
+                                <input class="form-control rounded-pill" type="password" name="password" id="password"placeholder="Ingrese su contraseña"/>
                         </div>
                         <div class="d-grid gap-2 col-11 mx-auto">
-                        <button type="submit" class=" custom-background3 fw-bold">REGISTRARSE</button>
+                        <button type="submit" class=" custom-background3 fw-bold">LOG IN</button>
                         </div>
+                        <div class="form-group p-3" th:if="${param.error != null}">
+                        <h3>Email o contraseña incorrectos</h3>
+                    </div>
                     </form>
                 </div>
             </div>
             <div class="col-md-5">
                 <div class="p-3">
-                    <h2 class="text-center">LOGIN</h2>
+                    <h2 class="text-center">Registrarse</h2>
                     <form>
                         <div class="form-group p-3">
                             <label for="login-email">Dirección de Correo Electrónico</label>
@@ -50,11 +53,13 @@
                             <input type="password" class="form-control rounded-pill" id="confirm-pwd" placeholder="Confirme su contraseña" name="confirmPswd">
                         </div>
                         <div class="d-grid gap-2 col-11 mx-auto">
-                        <button type="submit" class="custom-background3 fw-bold">LOG IN</button>
+                        <button type="submit" class="custom-background3 fw-bold">REGISTRARSE</button>
                         </div>
                     </form>
+                    
                 </div>
             </div>
+            
         </div>
     </div>
 
