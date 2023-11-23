@@ -1,68 +1,74 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{layout/plantilla :: head}">
-    <meta charset='utf-8'>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        /* Estilos adicionales */
-        .custom-input {
-            border-radius: 10px; /* Ajusta la curvatura de los bordes */
-            margin-bottom: 15px; /* Añade espacio entre los elementos */
-        }
-    </style>
-</head>
-<body class='snippet-body'>
-    <header th:replace="~{layout/plantilla :: header}"/>
-    <div class="container mt-5">
-        <div class="row justify-content-center g-2">
-            <div class="col-md-5">
-                <div class="p-3">
-                    <h2 class="text-center">Login</h2>
-                    <form method="POST" th:action="@{/login}">
-                        <div class="form-group p-3">
-                            <label for="email">Dirección de Correo Electrónico</label>
-                            <input class="form-control rounded-pill " type="text" name="username" id="username"placeholder="Ingrese su correo electrónico"/>
-                        </div>
-                        <div class="form-group p-3">
-                            <label for="pwd">Contraseña</label>
-                                <input class="form-control rounded-pill" type="password" name="password" id="password"placeholder="Ingrese su contraseña"/>
-                        </div>
-                        <div class="d-grid gap-2 col-11 mx-auto">
-                        <button type="submit" class=" custom-background3 fw-bold">LOG IN</button>
-                        </div>
-                        <div class="form-group p-3" th:if="${param.error != null}">
-                        <h3>Email o contraseña incorrectos</h3>
-                    </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-5">
-                <div class="p-3">
-                    <h2 class="text-center">Registrarse</h2>
-                    <form>
-                        <div class="form-group p-3">
-                            <label for="login-email">Dirección de Correo Electrónico</label>
-                            <input type="email" class="form-control rounded-pill" id="login-email" placeholder="Ingrese su correo electrónico" name="email">
-                        </div>
-                        <div class="form-group p-3">
-                            <label for="login-pwd">Contraseña</label>
-                            <input type="password" class="form-control rounded-pill" id="login-pwd" placeholder="Ingrese su contraseña" name="pswd">
-                        </div>
-                        <div class="form-group p-3">
-                            <label for="confirm-pwd">Confirmar Contraseña</label>
-                            <input type="password" class="form-control rounded-pill" id="confirm-pwd" placeholder="Confirme su contraseña" name="confirmPswd">
-                        </div>
-                        <div class="d-grid gap-2 col-11 mx-auto">
-                        <button type="submit" class="custom-background3 fw-bold">REGISTRARSE</button>
-                        </div>
-                    </form>
-                    
-                </div>
-            </div>
-            
-        </div>
-    </div>
+    <head th:replace="~{layout/plantilla :: head}">
+        <meta charset='utf-8'>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                <style>
+                    /* Estilos adicionales */
+                    .custom-input {
+                        border-radius: 10px; /* Ajusta la curvatura de los bordes */
+                        margin-bottom: 15px; /* Añade espacio entre los elementos */
+                    }
+                </style>
+                </head>
+                <body class='snippet-body'>
+                    <header th:replace="~{layout/plantilla :: header}"/>
+                    <section class="">
+                        <div class="container mt-5">
+                            <div class="row justify-content-center g-2">
+                                <div class="col-md-5 ">
+                                    <div class="p-3">
+                                        
+                                        <h2 class="text-center">Login</h2>
+                                        <form method="POST" th:action="@{/login}">
+                                            <div class="form-group p-3">
+                                                <label for="email">Dirección de Correo Electrónico</label>
+                                                <input class="form-control rounded-pill " type="text" name="username" id="username"placeholder="Ingrese su correo electrónico"/>
+                                            </div>
+                                            <div class="form-group p-3">
+                                                <label for="pwd">Contraseña</label>
+                                                <input class="form-control rounded-pill" type="password" name="password" id="password"placeholder="Ingrese su contraseña"/>
+                                            </div>
+                                            <div class="d-grid gap-2 col-11 mx-auto">
+                                                <button type="submit" class=" custom-background3 fw-bold">LOG IN</button>
+                                            </div>
+                                            <div class="form-group p-3" th:if="${param.error != null}">
+                                                <h3>Email o contraseña incorrectos</h3>
+                                            </div>
+                                        </form>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+                                    </div>
+                                
+                                </div>
+                                <div class="col-md-5">
+                                    
+                                    <div class="p-3">
+                                        <h2 class="text-center">Registrarse</h2>
+                                        <form>
+                                            <div class="form-group p-3">
+                                                <label for="login-email">Dirección de Correo Electrónico</label>
+                                                <input type="email" class="form-control rounded-pill" id="login-email" placeholder="Ingrese su correo electrónico" name="email">
+                                            </div>
+                                            <div class="form-group p-3">
+                                                <label for="login-pwd">Contraseña</label>
+                                                <input type="password" class="form-control rounded-pill" id="login-pwd" placeholder="Ingrese su contraseña" name="pswd">
+                                            </div>
+                                            <div class="form-group p-3">
+                                                <label for="confirm-pwd">Confirmar Contraseña</label>
+                                                <input type="password" class="form-control rounded-pill" id="confirm-pwd" placeholder="Confirme su contraseña" name="confirmPswd">
+                                            </div>
+                                            <div class="d-grid gap-2 col-11 mx-auto">
+                                                <button type="submit" class="custom-background3 fw-bold">REGISTRARSE</button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                </body>
+                </html>
