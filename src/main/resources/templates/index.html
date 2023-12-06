@@ -8,7 +8,7 @@
     </head>
     <body className='snippet-body'>
         <header th:replace="~{layout/plantilla :: header}"/>
-        <h1 class=" mt-2 ms-2">Categorias Principales</h1>
+        <h1 class=" mt-2 ms-2">[[#{index.categorias}]]</h1>
         <span class="d-block p-1 custom-background3"></span>
         <div class="container d-flex justify-content-center mt-50 mb-50">
 
@@ -23,9 +23,9 @@
                             </div>
                             <div class="card-body bg-light text-center">
                                 <div class="mb-2">
-                                    <h4 class="font-weight-semibold mb-2">Estética</h4>
+                                    <h4 class="font-weight-semibold mb-2">[[#{index.estetica}]]</h4>
                                 </div>
-                                <div class="text mb-6">Echa un vistazo a nuestros productos de esta categoría</div>
+                                <div class="text mb-6">[[#{index.descripcion}]]</div>
                             </div>
                         </div>
                     </a>
@@ -43,9 +43,9 @@
                             </div>
                             <div class="card-body bg-light text-center">
                                 <div class="mb-2">
-                                    <h4 class="font-weight-semibold mb-2">Maquillage</h4>
+                                    <h4 class="font-weight-semibold mb-2">[[#{index.maquillage}]]</h4>
                                 </div>
-                                <div class="text mb-6">Echa un vistazo a nuestros productos de esta categoría</div>
+                                <div class="text mb-6">[[#{index.descripcion}]]</div>
                             </div>
                         </a>
                     </div>
@@ -63,10 +63,10 @@
                         <div class="card-body bg-light text-center">
                             <div class="mb-2">
                                 <h4 class="font-weight-semibold mb-2">
-                                    Peluquería
+                                    [[#{index.peluqueria}]]
                                 </h4>
                             </div>
-                            <div class="text mb-6">Echa un vistazo a nuestros productos de esta categoría</div>
+                            <div class="text mb-6">[[#{index.descripcion}]]</div>
                         </div>
                             </a>
                     </div>
@@ -83,10 +83,10 @@
                         <div class="card-body bg-light text-center">
                             <div class="mb-2">
                                 <h4 class="font-weight-semibold mb-2">
-                                    Uñas
+                                    [[#{index.uñas}]]
                                 </h4>
                             </div>
-                            <div class="text mb-6">Echa un vistazo a nuestros productos de esta categoría</div>
+                            <div class="text mb-6">[[#{index.descripcion}]]</div>
                         </div>
                             </a>
                     </div>

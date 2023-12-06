@@ -50,24 +50,33 @@
                 <div class="container mt-3">
                     <div class="d-flex align-items-center justify-content-center">
                         <div class="input-group">
+                            <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">[[#{plantilla.idioma}]]</a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item"  th:href="@{/(lang=es)}">ES</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/(lang=en)}">EN</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                             <form class="" action="/producto/listado" method="get">
                                 <input type="text" name="terminoBusqueda" class="form-control rounded-pill" placeholder="Buscar Productos" />
                             </form>
                             <div class="input-group-append">
                                 <button class="btn btn-outline-emphasis-color dropdown-toggle" type="button" data-toggle="dropdown">
-                                    Categorias
+                                    [[#{plantilla.categorias}]]
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" th:href="@{/producto1/listado}">Estetica</a>
-                                    <a class="dropdown-item" th:href="@{/producto2/listado}">Maquillaje</a>
-                                    <a class="dropdown-item" th:href="@{/producto3/listado}">Peluqueria</a>
-                                    <a class="dropdown-item" th:href="@{/producto4/listado}">Uñas</a>
+                                    <a class="dropdown-item" th:href="@{/producto1/listado}">[[#{plantilla.estetica}]]</a>
+                                    <a class="dropdown-item" th:href="@{/producto2/listado}">[[#{plantilla.maquillage}]]</a>
+                                    <a class="dropdown-item" th:href="@{/producto3/listado}">[[#{plantilla.peluqueria}]]</a>
+                                    <a class="dropdown-item" th:href="@{/producto4/listado}">[[#{plantilla.uñas}]]</a>
                                 </div>
                             </div>
                             <div class="input-group-append">
-                                <a class="btn btn-outline-emphasis-color" href="#">Iniciar sesión</a>
+                                <a class="btn btn-outline-emphasis-color" href="#">[[#{plantilla.inciarsecion}]]</a>
                                 <a class="btn btn-outline-emphasis-color" th:href="@{/carrito/listado}">
-                                    <i class="fa fa-shopping-cart"></i> Carrito
+                                    <i class="fa fa-shopping-cart"></i> [[#{plantilla.carrito}]]
                                 </a>
                             </div>
                             <ul class="navbar-nav ml-auto" sec:authorize="!isAuthenticated()">
@@ -96,6 +105,7 @@
                                     </form>
                                 </li>
                             </ul>
+                            
                         </div>
                         </div>
                     </div>
@@ -108,13 +118,13 @@
                         <ul class="navbar-nav ml-4">
                             <li class="nav-item dropdown col-8">
                                 <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-bars" aria-hidden="true"></i> Ver Categorias
+                                    <i class="fa fa-bars" aria-hidden="true"></i> [[#{plantilla.vercategorias}]]
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item text-dark" th:href="@{/producto1/listado}">Estetica</a>
-                                    <a class="dropdown-item text-dark" th:href="@{/producto2/listado}">Maquillaje</a>
-                                    <a class="dropdown-item text-dark" th:href="@{/producto3/listado}">Peluqueria</a>
-                                    <a class="dropdown-item text-dark" th:href="@{/producto4/listado}">Uñas</a>
+                                    <a class="dropdown-item text-dark" th:href="@{/producto1/listado}">[[#{plantilla.estetica}]]</a>
+                                    <a class="dropdown-item text-dark" th:href="@{/producto2/listado}">[[#{plantilla.maquillage}]]</a>
+                                    <a class="dropdown-item text-dark" th:href="@{/producto3/listado}">[[#{plantilla.peluqueria}]]</a>
+                                    <a class="dropdown-item text-dark" th:href="@{/producto4/listado}">[[#{plantilla.uñas}]]</a>
                                 </div>
                             </li>
                         </ul>
@@ -122,16 +132,16 @@
 
 
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <a class="navbar-brand" th:href="@{/}">Inicio</a>
+                        <a class="navbar-brand" th:href="@{/}">[[#{plantilla.inicio}]]</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" th:href="@{/producto/login}">Blog</a>
+                                <a class="nav-link" th:href="@{/producto/login}">[[#{plantilla.blog}]]</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Contactanos</a>
+                                <a class="nav-link" href="#">[[#{plantilla.contactanos}]]</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Nosotros</a>
@@ -146,7 +156,7 @@
         <footer th:fragment="footer" class="bg-light text-dark">
             <hr class="my-1 border-success"></hr>
             <div class="d-flex justify-content-center align-items-center">
-                <p class="mb-2 mr-2 mx-2">Sitio propiedad de S.A. 2023 Todos los derechos reservados.</p>
+                <p class="mb-2 mr-2 mx-2">[[#{plantilla.footer}]]</p>
 
                 <a rel="noopener noreferrer nofollow" href="#" target="_blank" class="wd-social-icon social-facebook" aria-label="Facebook social link">
                     <i class="fab fa-facebook fa-2x "></i>
